@@ -24,7 +24,7 @@ export default function MemoryPathGame() {
   const [scrollOffset, setScrollOffset] = useState(0);
   const [lastMoveTime, setLastMoveTime] = useState(Date.now());
   const [board, setBoard] = useState<Cell[][]>([]);
-  const [numberPositions, setNumberPositions] = useState<Map<number, Position>>(new Map());
+  // const [numberPositions, setNumberPositions] = useState<Map<number, Position>>(new Map());
   const [startTime, setStartTime] = useState<number>(0);
   const [elapsedTime, setElapsedTime] = useState<number>(0);
   const [completionTime, setCompletionTime] = useState<number>(0);
@@ -130,7 +130,7 @@ export default function MemoryPathGame() {
     });
 
     setBoard(newBoard);
-    setNumberPositions(positions);
+    // setNumberPositions(positions);
     
     const startPos = positions.get(0)!;
     setPlayerPos(startPos);
@@ -356,7 +356,7 @@ export default function MemoryPathGame() {
     if (savedBoardRef.current) {
       const { board: savedBoard, positions: savedPositions } = savedBoardRef.current;
       setBoard(savedBoard);
-      setNumberPositions(savedPositions);
+      // setNumberPositions(savedPositions);
       const startPos = savedPositions.get(0)!;
       setPlayerPos(startPos);
     }
